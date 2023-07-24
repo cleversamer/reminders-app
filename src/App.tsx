@@ -4,7 +4,7 @@ import RemindersList from "./components/RemindersList";
 import Reminder from "./interfaces/reminder";
 import reminderService from "./services/reminder";
 
-function App() {
+function App(): JSX.Element {
   const [reminders, setReminders] = useState<Reminder[]>([]);
 
   useEffect(() => {
