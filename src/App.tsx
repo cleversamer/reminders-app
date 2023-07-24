@@ -18,9 +18,19 @@ function App() {
     } catch (err) {}
   };
 
+  const handleRemoveReminder = async (id: number) => {
+    try {
+      const newReminders = reminders.filter((reminder) => reminder.id !== id);
+      setReminders(newReminders);
+    } catch (err) {}
+  };
+
   return (
     <div className="App">
-      <RemindersList items={reminders} />
+      <RemindersList
+        items={reminders}
+        onRemoveReminder={handleRemoveReminder}
+      />
     </div>
   );
 }
